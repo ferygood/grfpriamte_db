@@ -1,4 +1,4 @@
-Certainly! Here's an example of file-level encryption using GnuPG (GPG) to encrypt a PostgreSQL database dump file:
+### Steps to encrypted dump file before sharing
 
 1. Install GnuPG (if not already installed) by following the appropriate instructions for your operating system.
 
