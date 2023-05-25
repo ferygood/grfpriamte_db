@@ -7,4 +7,4 @@ PostgreSQL database for TFprimate
 ```
 
 # Table Schema ERD
-![]('ERD_05252023.png')
+![ERD Diagram](ERD_05252023.png)
