@@ -73,6 +73,14 @@ with psycopg.connect("dbname=tfprimate user=postgres password=yao123") as conn:
         );
       """)
 
-       
+      # create entrezid table
+      cur.execute("""
+        CREATE TABLE IF NOT EXISTS GRFID(
+          EnsemblID varchar(50) primary key,
+          Entrezid varchar(50),
+          GeneName varchar(30),
+          FOREIGN KEY (EnsemblID) REFERENCES primateGRFs(EnsemblID)
+        );
+      """)
     
     conn.commit()
