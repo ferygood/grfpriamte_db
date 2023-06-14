@@ -1,6 +1,12 @@
 import psycopg
 
-with psycopg.connect("dbname=tfprimate user=postgres password=yao123") as conn:
+with psycopg.connect("""
+     host=localhost 
+     port=5432 
+     dbname=tfprimate 
+     user=postgres 
+     password=yao123
+     """) as conn:
     
     # create primate GRFs table
     with conn.cursor() as cur:

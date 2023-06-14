@@ -7,14 +7,20 @@ import psycopg
 from psycopg import sql
 
 # read fasta in plain text
-fasta_file = "../preprocess_data/ENSG00000288616_codon.fa"
+fasta_file = "./raw_data/ENSG00000288616_codon.fa"
 
 # Read the contents of the FASTA file
 with open(fasta_file, "r") as file:
     fasta_string = file.read()
 
 # insert into alignment table
-with psycopg.connect("dbname=tfprimate user=postgres password=yao123") as conn:
+with psycopg.connect("""
+     host=localhost 
+     port=5432 
+     dbname=tfprimate 
+     user=postgres 
+     password=yao123
+     """) as conn:
     
     with conn.cursor() as cur:
         cur.execute(

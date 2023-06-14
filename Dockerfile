@@ -1,15 +1,16 @@
-# under development, please do not use
+# still developing, might have error
 # Use the official PostgreSQL image as the base image
-FROM python:3.9.17
+FROM postgres
 
-RUN apt-get update \
-    && apt-get install -y postgresql-client
+# Set environment
+ENV POSTGRES_PASSWORD=yao123
+ENV POSTGRES_DB=tfprimate
 
-WORKDIR /app
+# Mount file
+COPY ./raw_data ./data 
 
-COPY . /app
+# Expose the port
+EXPOSE 5432
 
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-CMD python create_table.py
+# Run container
+CMD ["postgres"]
