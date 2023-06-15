@@ -31,5 +31,12 @@ docker build -t <image-name> .
 docker run --name <container-name> -p 5432:5432 -d <image-name>
 
 # execute example
-docker exec -it <image-name> /bin/bash
+docker exec -it <container-name> /bin/bash
+```
+
+## FastAPI
+- Interactive API docs can be access `/docs`
+- Alternative API docs `/redoc` 
+```shell
+uvicorn main:app --reload
 ```
